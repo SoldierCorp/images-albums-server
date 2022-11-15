@@ -33,6 +33,10 @@ export interface Image extends Media {
   created_at: string;
 }
 
+export interface ImageWithTags extends Image {
+  tags: string[];
+}
+
 
 // Cloudinary
 export type CloudinaryImage = {

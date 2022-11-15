@@ -11,7 +11,7 @@ const insertImages = async (username: string, images: Image[]) => {
 const getImages = async (username: string): Promise<Image[]> => {
   const snapshot = await db.collection(username).get();
   let savedImages: Image[] = []
-  snapshot.forEach((doc) => {
+  snapshot.forEach((doc: any) => {
     savedImages = [...savedImages, doc.data() as Image]
   });
 

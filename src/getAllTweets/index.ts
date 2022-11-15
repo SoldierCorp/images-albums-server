@@ -2,15 +2,15 @@ import type { Image } from '../twetter/types'
 
 import {
   getUser,
-  getTweets,
-  // getAllTweets,
+  // getTweets,
+  getAllTweets,
 } from '../twetter/actions'
 
-import {
-  uploadMultipleImages,
-} from '../twetter/cloudinary'
+import { uploadMultipleImages } from '../twetter/cloudinary'
 
 import { orderDesc } from '../twetter/actions'
+
+import { addTagsToImages } from '../twetter/imagga'
 
 import {
   insertImages,
@@ -23,11 +23,10 @@ const saveTwetterImages = async (): Promise<Image[]> => {
   const username = 'ImagesAlbum'
   const user = await getUser(username)
 
-  const tweetsImagesAll = await getTweets(user.id, 5)
+  const tweetsImagesAll = await getAllTweets(user.id)
   console.log('Las images: ', tweetsImagesAll.length)
 
   console.log('---------------------------')
-
 
   const imagestoSave = await filterImagesToSave(username, tweetsImagesAll)
   console.log('images to save: ', imagestoSave.length)
@@ -40,13 +39,13 @@ const saveTwetterImages = async (): Promise<Image[]> => {
 
   console.log('---------------------------')
 
+  const imagesWithTags = await addTagsToImages(imagestoSave)
 
-  console.log('Saving images in db...')
-  await insertImages(username, imageUploaded)
-  console.log('Images saved in db: ', imageUploaded.length)
+  await insertImages(username, imagesWithTags)
+  console.log('Images saved in db: ', imagesWithTags.length)
 
 
-  const orderedImages = orderDesc(imageUploaded)
+  const orderedImages = orderDesc(imagesWithTags)
 
   return orderedImages
 
