@@ -10,7 +10,7 @@ const addTagsToImages = async (images: Image[]): Promise<ImageWithTags[]> => {
     const tagsFormatted = tags.map((tag: string) => tag.toLowerCase().replace(' ', '-'))
     const el: ImageWithTags = {
       ...img,
-      tags: tagsFormatted.slice(0, 10)
+      tags: tagsFormatted
     }
     elements = [...elements, el]
   }
