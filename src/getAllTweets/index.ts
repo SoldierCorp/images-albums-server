@@ -17,7 +17,6 @@ import {
   filterImagesToSave,
 } from '../db'
 
-
 const saveTwetterImages = async (): Promise<Image[]> => {
 
   const username = 'ImagesAlbum'
@@ -53,7 +52,3 @@ const saveTwetterImages = async (): Promise<Image[]> => {
 
 
 export { saveTwetterImages }
-
-// 256 px
-
-// spacing 70 header
