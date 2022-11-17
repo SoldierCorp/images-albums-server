@@ -1,5 +1,2 @@
-import { saveTwetterImages } from './getAllTweets'
-
-  ; (async () => {
-    await saveTwetterImages()
-  })()
+import { saveTwetterImagesCronjob } from './actions/cron'
+saveTwetterImagesCronjob()
