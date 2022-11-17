@@ -18,7 +18,7 @@ import {
   getLastImages,
 } from '../db'
 
-const saveTwetterImages = async (): Promise<Image[]> => {
+const saveTweeterImages = async (): Promise<Image[]> => {
   const username = 'ImagesAlbum'
 
   const user = await getUser(username)
@@ -62,4 +62,4 @@ const saveTwetterImages = async (): Promise<Image[]> => {
 }
 
 
-export { saveTwetterImages }
+export { saveTweeterImages }

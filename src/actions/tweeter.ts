@@ -45,7 +45,7 @@ const getUser = async (username: string): Promise<User> => {
 
   const user = await axios.get(userUrl, {
     headers: {
-      'Authorization': `Bearer ${process.env.TWETTER_TOKEN}`
+      'Authorization': `Bearer ${process.env.TWEETER_TOKEN}`
     }
   })
 
@@ -57,7 +57,7 @@ const getTweets = async (userId: string, maxResults = 20): Promise<Image[]> => {
 
   const tweets = await axios.get(urlTweets, {
     headers: {
-      'Authorization': `Bearer ${process.env.TWETTER_TOKEN}`
+      'Authorization': `Bearer ${process.env.TWEETER_TOKEN}`
     }
   })
 
@@ -70,7 +70,7 @@ const getRecursionTweets = async (userId: string, nextTokenToFetch = ''): Promis
 
   const tweets = await axios.get(urlTweets, {
     headers: {
-      'Authorization': `Bearer ${process.env.TWETTER_TOKEN}`
+      'Authorization': `Bearer ${process.env.TWEETER_TOKEN}`
     }
   })
 

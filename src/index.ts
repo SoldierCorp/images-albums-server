@@ -1,2 +1,2 @@
-import { saveTwetterImagesCronjob } from './actions/cron'
-saveTwetterImagesCronjob()
+import { saveTweeterImagesCronjob } from './actions/cron'
+saveTweeterImagesCronjob()
