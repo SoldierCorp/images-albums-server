@@ -52,7 +52,7 @@ const getUser = async (username: string): Promise<User> => {
   return user.data.data
 }
 
-const getTweets = async (userId: string, maxResults = 10): Promise<Image[]> => {
+const getTweets = async (userId: string, maxResults = 20): Promise<Image[]> => {
   const urlTweets = `https://api.twitter.com/2/users/${userId}/tweets?tweet.fields=attachments,created_at&expansions=attachments.media_keys&media.fields=height,width,url&max_results=${maxResults}`
 
   const tweets = await axios.get(urlTweets, {

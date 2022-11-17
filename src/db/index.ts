@@ -8,6 +8,16 @@ const insertImages = async (username: string, images: Image[]) => {
   }
 }
 
+const getLastImages = async (username: string): Promise<Image[]> => {
+  const snapshot = await db.collection(username).orderBy('created_at', 'desc').limit(10).get();
+  let savedImages: Image[] = []
+  snapshot.forEach((doc: any) => {
+    savedImages = [...savedImages, doc.data() as Image]
+  });
+
+  return savedImages
+}
+
 const getImages = async (username: string): Promise<Image[]> => {
   const snapshot = await db.collection(username).get();
   let savedImages: Image[] = []
@@ -33,4 +43,5 @@ export {
   insertImages,
   getImages,
   filterImagesToSave,
+  getLastImages,
 }
