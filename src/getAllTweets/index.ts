@@ -1,16 +1,16 @@
-import type { Image } from '../twetter/types'
+import type { Image } from '../actions/types'
 
 import {
   getUser,
   // getTweets,
   getAllTweets,
-} from '../twetter/actions'
+} from '../actions/tweeter'
 
-import { uploadMultipleImages } from '../twetter/cloudinary'
+import { uploadMultipleImages } from '../actions/cloudinary'
 
-import { orderDesc } from '../twetter/actions'
+import { orderDesc } from '../actions/tweeter'
 
-import { addTagsToImages } from '../twetter/imagga'
+import { addTagsToImages } from '../actions/imagga'
 
 import {
   insertImages,

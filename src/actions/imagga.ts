@@ -1,4 +1,4 @@
-import type { Image, ImageWithTags } from '../twetter/types'
+import type { Image, ImageWithTags } from './types'
 
 import { getTags } from '../config/imagga'
 

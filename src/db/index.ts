@@ -1,4 +1,4 @@
-import type { Image } from '../twetter/types'
+import type { Image } from '../actions/types'
 import { db } from '../config/firebase';
 
 const insertImages = async (username: string, images: Image[]) => {
