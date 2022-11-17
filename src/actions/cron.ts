@@ -9,7 +9,7 @@ const runCronjob = async () => {
 
 const saveTwetterImagesCronjob = async () => {
   await runCronjob()
-  cron.schedule('* * * * *', async () => {
+  cron.schedule('0 7 * * *', async () => {
     await runCronjob()
   }).start();
 }
