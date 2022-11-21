@@ -21,6 +21,8 @@ const runCronjobExecutionTime = async () => {
 }
 
 const saveTweeterImagesCronjob = async () => {
+  const startExecution = new Date().toLocaleString()
+  console.log(`[${startExecution}]`)
   await runCronjobExecutionTime()
   cron.schedule('0 7 * * *', async () => {
     await runCronjobExecutionTime()
