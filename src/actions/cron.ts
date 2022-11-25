@@ -25,6 +25,7 @@ const saveTweeterImagesCronjob = async () => {
   console.log(`[${startExecution}]`)
   await runCronjobExecutionTime()
   cron.schedule('0 7 * * *', async () => {
+    console.log(`[${startExecution}]`)
     await runCronjobExecutionTime()
   }).start();
 }
